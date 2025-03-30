@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <form id="contact" action="" method="post">
+          <form id="contact" action="contact-us.php" method="POST">
             <div class="row">
               <div class="col-lg-12">
                 <div class="section-heading">
@@ -40,7 +40,7 @@
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                 <input type="text" name="user_name" id="name" placeholder="Full Name" autocomplete="on" required>
+                 <input type="text" name="meno" id="meno" placeholder="Full Name" autocomplete="on" required>
                 </fieldset>
               </div>
               <div class="col-lg-12">
@@ -50,7 +50,7 @@
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                  <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                  <textarea name="Vaša správa" id="Vaša správa" placeholder="Your Message"></textarea>
                 </fieldset>
               </div>
               <div class="col-lg-12">
@@ -79,18 +79,6 @@
     </div>
   </section>
 
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/lightbox.js"></script>
-    <script src="assets/js/tabs.js"></script>
-    <script src="assets/js/video.js"></script>
-    <script src="assets/js/slick-slider.js"></script>
-    <script src="assets/js/custom.js"></script>
     <script>
         //according to loftblog tut
         $('.nav li:first').addClass('active');
@@ -136,7 +124,10 @@
         $(window).scroll(function () {
           checkSection();
         });
-    </script>
-</body>
 
+    </script>
+<?php
+  add_scripts();
+?>
+</body>
 </html>

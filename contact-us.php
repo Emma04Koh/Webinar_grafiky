@@ -14,6 +14,19 @@ include('pomocnik/header.php');
     </div>
   </section>
 
+<div class="message">
+  <?php
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $contact_name = $_POST["meno"];
+      if (empty($contact_name)){
+        echo "";
+      }  else{
+        echo "<h2> $contact_name thank you!!</h2>";
+      }
+    }
+  ?>
+</div>
+
   <section class="more-info">
     <div class="container">
       <div class="row">

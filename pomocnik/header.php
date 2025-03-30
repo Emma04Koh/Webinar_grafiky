@@ -1,3 +1,6 @@
+<?php 
+  require('_inc/functions.php')
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,27 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <title>EduWell - Education HTML5 Template</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/flex-slider.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-eduwell-style.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/lightbox.css">
-<!--
-
-TemplateMo 573 EduWell
-
-https://templatemo.com/tm-573-eduwell
-
--->
+    <?php
+    add_stylesheets();
+    ?>
+<!-- TemplateMo 573 EduWell https://templatemo.com/tm-573-eduwell -->
   </head>
 
 <body>
@@ -52,9 +41,15 @@ https://templatemo.com/tm-573-eduwell
                           <li class="has-sub">
                               <a href="javascript:void(0)">Pages</a>
                               <ul class="sub-menu">
-                                  <li><a href="about-us.php">About Us</a></li>
-                                  <li><a href="our-services.php">Our Services</a></li>
-                                  <li><a href="contact-us.php">Contact Us</a></li>
+                                <?php
+                                    $pages = array(
+                                    "About Us"=>"about-us.php",
+                                    "Our Services"=>"our-services.php",
+                                    "Contact Us"=> "contact-us.php"
+                                    );
+                                    echo (get_menu($pages));
+                                ?>
+
                               </ul>
                           </li>
                           <li class="scroll-to-section"><a href="#testimonials">Testimonials</a></li> 
