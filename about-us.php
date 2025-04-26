@@ -1,5 +1,5 @@
 <?php 
-include('pomocnik/header.php');
+include('components/header.php');
 ?>
 <section class="page-heading">
     <div class="container">
@@ -284,6 +284,6 @@ include('pomocnik/header.php');
       </div>
     </div>
   </section>
-  <?php
-include('pomocnik/footer.php');
+  <?php 
+include('components/footer.php');
 ?>

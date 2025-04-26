@@ -1,5 +1,5 @@
 <?php 
-include('pomocnik/header.php');
+include('components/header.php');
 ?>
 <!-- ***** Main Banner Area Start ***** -->
   <section class="main-banner" id="top">
@@ -341,6 +341,6 @@ include('pomocnik/header.php');
     </div>
   </section>
 
-<?php
-include('pomocnik/footer.php');
+  <?php 
+include('components/footer.php');
 ?>

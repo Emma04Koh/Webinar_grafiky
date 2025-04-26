@@ -1,5 +1,5 @@
 <?php 
-  require('_inc/functions.php')
+  require('components/require.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
