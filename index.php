@@ -187,7 +187,7 @@ include('components/header.php');
                           <span>4 Weeks</span>
                           <span class="last-span">3 Certificates</span>
                           <div class="text-button">
-                            <a href="contact-us.html">Subscribe Course</a>
+                            <a href="contact-us.php">Subscribe Course</a>
                           </div>
                         </div>
                       </div>
@@ -205,7 +205,7 @@ include('components/header.php');
                           <span>6 Weeks</span>
                           <span class="last-span">1 Certificate</span>
                           <div class="text-button">
-                            <a href="contact-us.html">Subscribe Course</a>
+                            <a href="contact-us.php">Subscribe Course</a>
                           </div>
                         </div>
                       </div>
@@ -223,7 +223,7 @@ include('components/header.php');
                           <span>4 Weeks</span>
                           <span class="last-span">1 Certificate</span>
                           <div class="text-button">
-                            <a href="contact-us.html">Subscribe Course</a>
+                            <a href="contact-us.php">Subscribe Course</a>
                           </div>
                         </div>
                       </div>
@@ -241,7 +241,7 @@ include('components/header.php');
                           <span>4 Weeks</span>
                           <span class="last-span">2 Certificates</span>
                           <div class="text-button">
-                            <a href="contact-us.html">Subscribe Course</a>
+                            <a href="contact-us.php">Subscribe Course</a>
                           </div>
                         </div>
                       </div>
@@ -269,7 +269,7 @@ include('components/header.php');
           <h4>Up to 50% OFF For 1+ courses</h4>
           <p>Kogi VHS freegan bicycle rights try-hard green juice probably haven't heard of them cliche la croix af chillwave.</p>
           <div class="white-button">
-            <a href="contact-us.html">View Courses</a>
+            <a href="contact-us.php">View Courses</a>
           </div>
         </div>
       </div>

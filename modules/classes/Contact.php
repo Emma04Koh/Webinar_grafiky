@@ -3,7 +3,7 @@ class Contact{
     private $db;
 
     public function __construct(Database $database){
-        $this->db = $database->getPDO();
+        $this->db = $database->getConnection();
     }
 
     public function index() {
@@ -18,9 +18,9 @@ class Contact{
         return $stmt->execute();
     }
 
-    public function create($name, $email, $message){
-        $stmt = $this->db->prepare("INSERT INTO contact (name, email, message) VALUES (:name, :email, :message)");
-        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+    public function create($full_name, $email, $message){
+        $stmt = $this->db->prepare("INSERT INTO contact (full_name, email, message) VALUES (:full_name, :email, :message)");
+        $stmt->bindParam(':full_name', $full_name, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':message', $message, PDO::PARAM_STR);
         return $stmt->execute();
@@ -33,12 +33,12 @@ class Contact{
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function update($id, $name, $email, $message) {
-        $stmt = $this->db->prepare("UPDATE contact SET name = :name, email = :email, 
+    public function update($id, $full_name, $email, $message) {
+        $stmt = $this->db->prepare("UPDATE contact SET full_name = :full_name, email = :email, 
         message = :message WHERE id = :id");
         
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->bindParam(':full_name', $full_name, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':message', $message, PDO::PARAM_STR);
         return $stmt->execute();

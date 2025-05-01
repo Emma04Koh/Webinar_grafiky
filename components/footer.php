@@ -1,3 +1,21 @@
+<?php
+  $db = new Database();
+  $contact = new Contact($db);
+  if($_SERVER['REQUEST_METHOD']=='POST'){
+    $full_name = $_POST['full_name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    //print_r($_POST);
+    if ($contact->create($full_name, $email, $message)) {
+      header("Location: contact-us.php");
+      exit;
+    } else {
+        echo "Error creating contact.";
+    }
+  }
+
+?>
+
 <section class="contact-us" id="contact-section">
     <div class="container">
       <div class="row">
@@ -29,7 +47,7 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <form id="contact" action="contact-us.php" method="POST">
+          <form id="contact" method="POST">
             <div class="row">
               <div class="col-lg-12">
                 <div class="section-heading">
@@ -40,7 +58,7 @@
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                 <input type="text" name="meno" id="meno" placeholder="Full Name" autocomplete="on" required>
+                 <input type="text" name="full_name" id="full_name" placeholder="Full Name" autocomplete="on" required>
                 </fieldset>
               </div>
               <div class="col-lg-12">
@@ -50,7 +68,7 @@
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                  <textarea name="Vaša správa" id="Vaša správa" placeholder="Your Message"></textarea>
+                  <textarea name="message" id="message" placeholder="Your Message"></textarea>
                 </fieldset>
               </div>
               <div class="col-lg-12">

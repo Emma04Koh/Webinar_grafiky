@@ -16,9 +16,9 @@ function add_stylesheets(){
 
     switch($page_name){
         case 'index':
-            echo('<link rel="stylesheet" href="assets/css/flex-slider.css">');
-            echo('<link rel="stylesheet" href="assets/css/lightbox.css">');
             echo('<link rel="stylesheet" href="assets/css/owl.css">');
+            echo('<link rel="stylesheet" href="assets/css/lightbox.css">');
+            echo('<link rel="stylesheet" href="assets/css/flex-slider.css">'); 
             break;
         case 'about-us':
             echo('<link rel="stylesheet" href="assets/css/owl.css">');
@@ -37,12 +37,12 @@ function add_scripts(){
     switch($page_name){
         case 'index':
             echo('<script src="assets/js/lightbox.js"></script>');
-            echo('<script src="assets/js/tabs.js"></script>');
-            echo('<script src="assets/js/slick-slider.js"></script>');
-            echo('<script src="assets/js/video.js"></script>');
-            echo('<script src="assets/js/isotope.min.js"></script>');
             echo('<script src="assets/js/owl-carousel.js"></script>');
             echo('<script src="assets/js/custom.js"></script>');
+            echo('<script src="assets/js/tabs.js"></script>');
+            echo('<script src="assets/js/slick-slider.js"></script>');
+            echo('<script src="assets/js/video.js"></script>'); 
+            echo('<script src="assets/js/isotope.min.js"></script>');
             echo('<script src="assets/js/isotope.js"></script>');
             break;
         case 'our-services':
@@ -50,6 +50,10 @@ function add_scripts(){
             echo('<script src="assets/js/owl-carousel.js"></script>');
             echo('<script src="assets/js/custom.js"></script>');
             echo('<script src="assets/js/slick-slider.js"></script>');
+            break;
+        case 'about-us':
+            echo('<script src="assets/js/owl-carousel.js"></script>');
+            echo('<script src="assets/js/custom.js"></script>');
             break;
     }
 }

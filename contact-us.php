@@ -17,7 +17,7 @@ include('components/header.php');
 <div class="message">
   <?php
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $contact_name = $_POST["meno"];
+      $contact_name = $_POST["full_name"];
       if (empty($contact_name)){
         echo "";
       }  else{
