@@ -44,5 +44,16 @@ class Contact{
         return $stmt->execute();
     }
 
+    public function edit($id, $full_name, $email, $message) {
+        $stmt = $this->db->prepare("UPDATE contact SET full_name = :full_name, email = :email, 
+        message = :message WHERE id = :id");
+        
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':full_name', $full_name, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':message', $message, PDO::PARAM_STR);
+        return $stmt->execute();
+    }
+
 }
 ?>
