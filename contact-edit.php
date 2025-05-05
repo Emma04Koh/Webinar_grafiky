@@ -10,7 +10,7 @@ if(isset($_GET['id'])){
         $name = $_POST['full_name'];
         $email = $_POST['email'];
         $message = $_POST['message'];
-        if ($contact->edit(full_name, $email, $message)) {
+        if ($contact->update($id, $name, $email, $message)) {
           header("Location: admin.php");
           exit;
         } else {

@@ -4,7 +4,7 @@ class Database {
     private $port = '3306'; //port pre MySQL
     private $username = 'root';
     private $password = '';
-    private $database_name = 'my_db'; //NAPISAT MENO ESTE
+    private $database_name = 'my_db';
     private $charset = "utf8";
 
     private $pdo;
@@ -16,7 +16,7 @@ class Database {
                     port={$this->port};
                     charset={$this->charset}",
          $this->username,
-         $this->password
+         $this->password,
         );
         $this->pdo->setAttribute(attribute: PDO::ATTR_ERRMODE, value: PDO::ERRMODE_EXCEPTION);
     }

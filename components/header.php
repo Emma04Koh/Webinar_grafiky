@@ -1,5 +1,6 @@
 <?php 
-  require('components/require.php');
+  require('require.php');
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">

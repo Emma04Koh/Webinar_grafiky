@@ -7,29 +7,22 @@ class Authenticate{
         $this->db = $database->getConnection();
     }
 
-    public function login($email, $password){
+    public function login($email, $password) {
         $stmt = $this->db->prepare("SELECT * FROM users WHERE email = :email");
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
         $user = $stmt->fetch();
-        
+
         if ($user) {
             if (password_verify($password, $user['password'])) {
-                echo "Password verified.<br>";
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['role'] = $user['role'];
                 $_SESSION['name'] = $user['name'];
-                //return true;
-                echo "hello";
-            } else {
-                echo "Password verification failed.<br>";
+                return true;
             }
-        } else {
-            echo "User not found.<br>";
         }
-        echo "nehello!";
-        //return false;
+        return false;
     }
     public function logout(){
         $_SESSION = array();
