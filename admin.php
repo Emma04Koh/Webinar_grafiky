@@ -27,23 +27,31 @@ if(isset($_GET['delete'])){
     header("Location:admin.php");
     exit;
 }
+
+if (isset($_GET['delete_user'])) {
+    $user = new User($db);
+    $user->destroy($_GET['delete_user']);
+    header("Location: admin.php");
+    exit;
+}
+
 ?>
 
 <section class="container">
-    <h1>Vítaj admin</h1>
+    <h1>Welcome admin</h1>
 
-    <h2>Kontakty</h2>
+    <h2>Contacts</h2>
 
     <table border =1>
         
         <tr>
             <th>ID</th>
-            <th>Meno</th>
+            <th>Name</th>
             <th>Email</th>
-            <th>Sprava</th>            
-            <th>Odstrániť</th>         
-            <th>Zobraziť</th>         
-            <th>Editovať</th>
+            <th>Message</th>            
+            <th>Delete</th>         
+            <th>Show</th>         
+            <th>Edit</th>
         </tr>
         <?php foreach($contacts as $con): ?>
             <tr>
@@ -59,12 +67,12 @@ if(isset($_GET['delete'])){
     </table>
 
     <?php if ($userRole == 0): ?>
-        <h2>Používatelia</h2>
+        <h2>Users</h2>
         <a href="user-create.php" class="button">Create User</a>
         <table border="1">
             <tr>
                 <th>ID</th>
-                <th>Meno</th>
+                <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
                 <th>Delete</th>

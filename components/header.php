@@ -1,6 +1,8 @@
 <?php 
   require('require.php');
   
+  $db = new Database();
+  $auth = new Authenticate($db);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,25 +38,20 @@
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
-                          <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                          <li class="scroll-to-section"><a href="#services">Services</a></li>
-                          <li class="scroll-to-section"><a href="#courses">Courses</a></li>
-                          <li class="has-sub">
-                              <a href="javascript:void(0)">Pages</a>
-                              <ul class="sub-menu">
                                 <?php
                                     $pages = array(
+                                    "Home"=>"index.php",
                                     "About Us"=>"about-us.php",
                                     "Our Services"=>"our-services.php",
-                                    "Contact Us"=> "contact-us.php"
+                                    "Contact Us"=> "contact-us.php",
                                     );
                                     echo (get_menu($pages));
                                 ?>
-
-                              </ul>
-                          </li>
-                          <li class="scroll-to-section"><a href="#testimonials">Testimonials</a></li> 
-                          <li class="scroll-to-section"><a href="#contact-section">Contact Us</a></li> 
+                                <?php if ($auth->isLoggedIn()): ?>
+                                    <li><a href="logout.php">Logout</a></li>
+                                <?php else: ?>
+                                    <li><a href="login.php">Login</a></li>
+                                <?php endif; ?>
                       </ul>        
                       <a class='menu-trigger'>
                           <span>Menu</span>
