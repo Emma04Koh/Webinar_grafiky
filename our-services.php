@@ -1,5 +1,8 @@
 <?php 
 include('components/header.php');
+$database = new Database();
+$services = new Services($database);
+$services_list = $services->getServices();
 ?>
 <section class="page-heading">
     <div class="container">
@@ -25,114 +28,17 @@ include('components/header.php');
         </div>
         <div class="col-lg-12">
           <div class="owl-service-item owl-carousel">
+            <?php foreach ($services_list as $service): ?>
             <div class="item">
               <div class="service-item">
                 <div class="icon">
-                  <img src="assets/images/service-icon-01.png" alt="">
+                  <img src="assets/images/service-icon-<?php echo $service['id']; ?>.png" alt="">
                 </div>
-                <h4>Useful Tricks</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
+                <h4><?php echo $service['name']; ?></h4>
+                <p><?php echo $service['description']; ?></p>
               </div>
             </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/service-icon-02.png" alt="">
-                </div>
-                <h4>Creative Ideas</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/service-icon-03.png" alt="">
-                </div>
-                <h4>Ready Target</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/service-icon-04.png" alt="">
-                </div>
-                <h4>Technology</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/service-icon-01.png" alt="">
-                </div>
-                <h4>Useful Tricks</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/service-icon-02.png" alt="">
-                </div>
-                <h4>Creative Ideas</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/service-icon-03.png" alt="">
-                </div>
-                <h4>Ready Target</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/service-icon-04.png" alt="">
-                </div>
-                <h4>Technology</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/service-icon-01.png" alt="">
-                </div>
-                <h4>Useful Tricks</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/service-icon-02.png" alt="">
-                </div>
-                <h4>Creative Ideas</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/service-icon-03.png" alt="">
-                </div>
-                <h4>Ready Target</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="assets/images/service-icon-04.png" alt="">
-                </div>
-                <h4>Technology</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>

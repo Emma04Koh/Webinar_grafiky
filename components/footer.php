@@ -1,21 +1,3 @@
-<?php
-  $db = new Database();
-  $contact = new Contact($db);
-  if($_SERVER['REQUEST_METHOD']=='POST'){
-    $full_name = $_POST['full_name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-    //print_r($_POST);
-    if ($contact->create($full_name, $email, $message)) {
-      header("Location: contact-us.php");
-      exit;
-    } else {
-        echo "Error creating contact.";
-    }
-  }
-
-?>
-
 <section class="contact-us" id="contact-section">
     <div class="container">
       <div class="row">
@@ -47,7 +29,7 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <form id="contact" method="POST">
+          <form id="contact" method="POST" action="modules/contact-post.php">
             <div class="row">
               <div class="col-lg-12">
                 <div class="section-heading">

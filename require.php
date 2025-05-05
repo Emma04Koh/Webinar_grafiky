@@ -6,4 +6,7 @@ include_once('modules/classes/Contact.php');
 include_once('modules/classes/Database.php');
 include_once('modules/classes/User.php');
 include_once('modules/classes/Authenticate.php');
+include_once('modules/classes/Course.php');
+include_once('modules/classes/OurTeam.php');
+include_once('modules/classes/Services.php');
 ?>

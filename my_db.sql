@@ -55,13 +55,30 @@ CREATE TABLE `courses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `description` varchar(2000) NOT NULL, 
+  hours int(11) NOT NULL,
+  weeks int(11) NOT NULL,
+  number_of_certificates int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovak_ci;
 
-INSERT INTO `courses` (`id`, `name`, `description`) VALUES
-(1, 'Web Development', 'Did you know that you can visit TooCSS website for latest listing of HTML templates and a variety of useful templates. You just need to go and visit that website right now. IF you have any suggestion or comment about this template, you can feel free to go to contact page for our email address.'),
-(2, 'Creative Graphic Design', 'You are not allowed to redistribute this template ZIP file on any other website without a permission from us. There are some unethical people on this world copied and reposted our templates without any permission from us. Their Karma will hit them really hard. Yeah!'),
-(3, 'Web Design', 'Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan. Kogi VHS freegan bicycle rights try-hard green juice probably havent heard of them cliche la croix af chillwave.'),
-(4, 'WordPress Introduction', 'Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan. Kogi VHS freegan bicycle rights try-hard green juice probably havent heard of them cliche la croix af chillwave.');
+insert into `courses` (`name`, `description`, `hours`, `weeks`, `number_of_certificates`) values
+('Web Development', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum eros eget nibh varius efficitur. In a dapibus eros. Aenean mattis malesuada diam, in commodo augue scelerisque luctus.', 36, 4, 3),
+('Creative Graphic Design', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum eros eget nibh varius efficitur. In a dapibus eros. Aenean mattis malesuada diam, in commodo augue scelerisque luctus.', 48, 6, 1),
+('Web Design', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum eros eget nibh varius efficitur. In a dapibus eros. Aenean mattis malesuada diam, in commodo augue scelerisque luctus.', 28, 4, 1),
+('WordPress Introduction', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum eros eget nibh varius efficitur. In a dapibus eros. Aenean mattis malesuada diam, in commodo augue scelerisque luctus.', 48, 4, 2);
+
+create table OurTeam (
+  Employee_ID int auto_increment primary key,
+  First_Name varchar(50) not null,
+  Last_Name varchar(50) not null,
+  Position varchar(15) not null,
+  Description varchar(255) not null
+);
+
+insert into OurTeam (First_Name, Last_Name, Position, Description) values
+('Emma', 'Koutova', 'CEO-Founder', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum eros eget nibh varius efficitur. In a dapibus eros. Aenean mattis malesuada diam, in commodo augue scelerisque luctus.'),
+('Matus', 'Gabas', 'Instructor', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum eros eget nibh varius efficitur. In a dapibus eros. Aenean mattis malesuada diam, in commodo augue scelerisque luctus.'),
+('Karin', 'Subert', 'The cool one', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum eros eget nibh varius efficitur. In a dapibus eros. Aenean mattis malesuada diam, in commodo augue scelerisque luctus.'),
+('Matus', 'Kovar', 'Meme Guy', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum eros eget nibh varius efficitur. In a dapibus eros. Aenean mattis malesuada diam, in commodo augue scelerisque luctus.')
 
 COMMIT;
