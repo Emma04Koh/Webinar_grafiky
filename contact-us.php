@@ -1,5 +1,6 @@
 <?php 
 include('components/header.php');
+
 ?>
 <section class="page-heading">
     <div class="container">
